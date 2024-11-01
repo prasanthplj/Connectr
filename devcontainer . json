@@ -1,0 +1,21 @@
+{
+  "name": "Connectr Codespace",
+  "dockerFile": "Dockerfile",
+  // Features to install in the codespace
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/yarn:1": {
+      "version": "latest"
+    }
+  },
+  // Forward ports for the frontend and backend
+  "forwardPorts": [3000, 8081], 
+  // Settings for VS Code in the codespace
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  // Post-create command to install dependencies and set up the environment
+  "postCreateCommand": "yarn install && cd server && yarn install" 
+}
